@@ -43,7 +43,7 @@ suite('exchange', function() {
         assert(stubs.ch.publish.calledWith('myExchange', 'rk'))
         
         var msg = JSON.parse(stubs.ch.publish.args[0][2].toString());
-        assert.equal(msg.Hello, 'World');
+        assert.equal(msg.data.Hello, 'World');
 
         done();
       });

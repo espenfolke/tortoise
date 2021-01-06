@@ -58,7 +58,7 @@ suite('queue', function() {
         assert(stubs.ch.sendToQueue.calledWith('myQueue'))
         
         var msg = JSON.parse(stubs.ch.sendToQueue.args[0][1].toString());
-        assert.equal(msg.Hello, 'World');
+        assert.equal(msg.data.Hello, 'World');
 
         done();
       });
